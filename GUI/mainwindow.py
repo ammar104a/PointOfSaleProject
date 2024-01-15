@@ -1,4 +1,5 @@
 # utf-8
+# Main Window
 import sys
 
 from PySide6.QtWidgets import QApplication, QMainWindow

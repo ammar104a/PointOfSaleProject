@@ -9,7 +9,6 @@ from inventoryWindow import InventoryWindow
 from invoiceVerification import InvoiceVerification
 from manageEmployees import ManageEmployees
 from customerManagement import CustomerManagement
-
 class Ui_MainWindow(object):
     def update_clock_and_date(self):
         # Update the clock label with the current time and day
@@ -30,12 +29,12 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName(u"All In One Point of Sale System")
         MainWindow.resize(1177, 778)
-        MainWindow.setStyleSheet(u"QWidget#centralwidget {\n"
-"    background-image: url('/Users/ammar/POS Project/POSPY/Testing/MGUI-1-1/SportoBgFHD.jpg');\n"
-"    background-repeat: no-repeat;\n"
-"    background-position: center center;\n"
-"}\n"
-"")
+        MainWindow.setStyleSheet("QMainWindow {"
+                         "    background-image: url('C:/Users/ammar/PythonProjects/PointOfSale/Images/Backgrounds/SportoBgFHD.jpg');\n"
+                         "    background-repeat: no-repeat;"
+                         "    background-position: center center;"
+                         "}")
+
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.ViewInventory = QPushButton(self.centralwidget)
@@ -47,7 +46,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon = QIcon()
-        icon.addFile(u"/Users/ammar/POS Project/POSPY/Testing/MGUI-1-1/Viewnventory1.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(r"C:\Users\ammar\PythonProjects\PointOfSale\Images\Icons\Viewnventory1.png", QSize(), QIcon.Normal, QIcon.Off)
         self.ViewInventory.setIcon(icon)
         self.ViewInventory.setIconSize(QSize(150, 150))
         self.ViewInventory.clicked.connect(self.openInventoryWindow)
@@ -60,7 +59,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon1 = QIcon()
-        icon1.addFile(u"/Users/ammar/POS Project/POSPY/Testing/MGUI-1-1/Accounts1.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(r"C:\Users\ammar\PythonProjects\PointOfSale\Images\Icons\Accounts1.png", QSize(), QIcon.Normal, QIcon.Off)
         self.accounts.setIcon(icon1)
         self.accounts.setIconSize(QSize(150, 150))
         self.checkout = QPushButton(self.centralwidget)
@@ -72,7 +71,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon2 = QIcon()
-        icon2.addFile(u"/Users/ammar/POS Project/POSPY/Testing/MGUI-1-1/Checkout1.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon2.addFile(r"C:\Users\ammar\PythonProjects\PointOfSale\Images\Icons\Checkout1.png", QSize(), QIcon.Normal, QIcon.Off)
         self.checkout.setIcon(icon2)
         self.checkout.setIconSize(QSize(150, 150))
         self.checkout.clicked.connect(self.openInvoiceVerification) # Button connected to function that opens new window
@@ -85,7 +84,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon3 = QIcon()
-        icon3.addFile(u"/Users/ammar/POS Project/POSPY/Testing/MGUI-1-1/ManageCustomers1.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon3.addFile(r"C:\Users\ammar\PythonProjects\PointOfSale\Images\Icons\ManageCustomers1.png", QSize(), QIcon.Normal, QIcon.Off)
         self.Customers.setIcon(icon3)
         self.Customers.setIconSize(QSize(800, 800))
         self.Customers.clicked.connect(self.openCustomerManagement)
@@ -98,7 +97,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon4 = QIcon()
-        icon4.addFile(u"/Users/ammar/POS Project/POSPY/Testing/MGUI-1-1/Analytics1.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(r"C:\Users\ammar\PythonProjects\PointOfSale\Images\Icons\Analytics1.png", QSize(), QIcon.Normal, QIcon.Off)
         self.analytics.setIcon(icon4)
         self.analytics.setIconSize(QSize(150, 150))
         self.employees = QPushButton(self.centralwidget)
@@ -110,7 +109,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon5 = QIcon()
-        icon5.addFile(u"/Users/ammar/POS Project/POSPY/Testing/MGUI-1-1/ManageEmployees1.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon5.addFile(r"C:\Users\ammar\PythonProjects\PointOfSale\Images\Icons\ManageEmployees1.png", QSize(), QIcon.Normal, QIcon.Off)
         self.employees.setIcon(icon5)
         self.employees.setIconSize(QSize(150, 150))
         self.employees.clicked.connect(self.openManageEmployees) # Button connected to function that opens new window
@@ -119,9 +118,11 @@ class Ui_MainWindow(object):
         self.Clocklabel = QLabel(self.centralwidget)
         self.Clocklabel.setObjectName(u"Clocklabel")
         self.Clocklabel.setGeometry(QRect(460, 30, 150, 21))
+        self.Clocklabel.setStyleSheet("color: white;")
         self.dateandtime = QLabel(self.centralwidget)
         self.dateandtime.setObjectName(u"dateandtime")
         self.dateandtime.setGeometry(QRect(660, 30, 121, 21))
+        self.dateandtime.setStyleSheet("color: white;")
 
         self.timer = QTimer(MainWindow)
         self.timer.timeout.connect(self.update_clock_and_date)
@@ -129,6 +130,7 @@ class Ui_MainWindow(object):
 
         self.Activation = QLabel(self.centralwidget)
         self.Activation.setObjectName(u"Activation")
+        self.Activation.setStyleSheet("color: white;")
         self.Activation.setGeometry(QRect(50, 30, 201, 16))
         self.Negasol = QPushButton(self.centralwidget)
         self.Negasol.setObjectName(u"Negasol")
@@ -139,7 +141,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon6 = QIcon()
-        icon6.addFile(u"/Users/ammar/POS Project/POSPY/Testing/MGUI-1-1/NEGASOL-logos_transparent.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon6.addFile(r"PointOfSale/Images/Logos/NEGASOL-logo.png", QSize(), QIcon.Normal, QIcon.Off)
         self.Negasol.setIcon(icon6)
         self.Negasol.setIconSize(QSize(100, 100))
         MainWindow.setCentralWidget(self.centralwidget)

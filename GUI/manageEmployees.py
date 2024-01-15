@@ -54,7 +54,7 @@ class ManageEmployees(QMainWindow):
 
     def load_employees(self):
         # Connect to your SQLite database and retrieve employee data
-        conn = sqlite3.connect("/Users/ammar/POS Project/POSPY/appData/employees.db")
+        conn = sqlite3.connect(r'C:\Users\ammar\PythonProjects\PointOfSale\appData\employees.db')
         cursor = conn.cursor()
         cursor.execute("SELECT name, key, shift FROM employees")
         employees = cursor.fetchall()
@@ -85,7 +85,7 @@ class ManageEmployees(QMainWindow):
             return
 
         # Add the employee to the database
-        connection = sqlite3.connect('/Users/ammar/POS Project/POSPY/appData/employees.db')
+        connection = sqlite3.connect(r'C:\Users\ammar\PythonProjects\PointOfSale\appData\employees.db')
         cursor = connection.cursor()
 
         # Check if the key already exists in the database
@@ -116,7 +116,7 @@ class ManageEmployees(QMainWindow):
         # Check if the input is valid and the user clicked OK
         if ok and len(key) == 8 and key.isdigit():
             # Search for the employee with the given key in the database
-            connection = sqlite3.connect('/Users/ammar/POS Project/POSPY/appData/employees.db')
+            connection = sqlite3.connect(r'C:\Users\ammar\PythonProjects\PointOfSale\appData\employees.db')
             cursor = connection.cursor()
         
             # Check if the employee exists
@@ -162,9 +162,45 @@ class ManageEmployees(QMainWindow):
         # Clear the data in the employee table
         self.employee_table.setRowCount(0)
 
+    def change_shift(self):
+        # Ask for the employee's key
+        emp_key, ok = QInputDialog.getText(self, 'Enter Employee Key', 'Enter the employee key:')
+
+        if ok and emp_key:
+            connection = sqlite3.connect(r'C:\Users\ammar\PythonProjects\PointOfSale\appData\employees.db')
+            cursor = connection.cursor()
+
+            # Check if the employee exists
+            cursor.execute("SELECT name FROM employees WHERE key=?", (emp_key,))
+            result = cursor.fetchone()
+
+            if result:
+                employee_name = result[0]
+                # Ask for the new shift number
+                new_shift, shift_ok = QInputDialog.getInt(self, 'Change Shift', f'Enter the new shift number for {employee_name} (1-3):', 1, 1, 3)
+
+                if shift_ok:
+                    # Update the shift in the database
+                    cursor.execute("UPDATE employees SET shift=? WHERE key=?", (new_shift, emp_key))
+                    connection.commit()
+                    QMessageBox.information(self, 'Shift Changed', f'Shift for {employee_name} changed successfully to {new_shift}.')
+                    # Refresh the table
+                    self.load_employees()  # or self.populate_employee_table()
+                else:
+                    QMessageBox.warning(self, 'Operation Cancelled', 'Shift change operation was cancelled.')
+
+            else:
+                QMessageBox.warning(self, 'Employee Not Found', 'No employee found with the provided key.')
+
+            # Close the database connection
+            connection.close()
+        else:
+            QMessageBox.warning(self, 'Invalid Input', 'Please enter a valid employee key.')
+
+
     def populate_employee_table(self):
         # Fetch data from the database and populate the employee table
-        connection = sqlite3.connect('/Users/ammar/POS Project/POSPY/appData/employees.db')
+        connection = sqlite3.connect(r'C:\Users\ammar\PythonProjects\PointOfSale\appData\employees.db')
         cursor = connection.cursor()
 
         # Fetch all employees from the database

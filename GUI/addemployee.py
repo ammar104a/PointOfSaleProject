@@ -1,6 +1,6 @@
 import sqlite3
 from getpass import getpass
-
+#Hello
 # Set your database path
 database_path = '/Users/ammar/POS Project/POSPY/appData/employees.db'
 

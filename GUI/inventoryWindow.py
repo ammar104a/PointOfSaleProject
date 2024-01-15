@@ -47,7 +47,7 @@ class InventoryWindow(QMainWindow):
         self.tableWidget.setGeometry(10, 10, 945, 778)  # Adjust as needed
 
         # Connect to the database
-        connection = sqlite3.connect('/Users/ammar/POS Project/POSPY/appData/your_database.db')
+        connection = sqlite3.connect(r'C:\Users\ammar\PythonProjects\PointOfSale\appData\your_database.db')
         cursor = connection.cursor()
 
         # Retrieve data from the database
@@ -118,7 +118,7 @@ class InventoryWindow(QMainWindow):
 
     def updateLowStockWarnings(self):
         # Connect to the database
-        connection = sqlite3.connect('/Users/ammar/POS Project/POSPY/appData/your_database.db')
+        connection = sqlite3.connect(r'C:\Users\ammar\PythonProjects\PointOfSale\appData\your_database.db')
         cursor = connection.cursor()
 
         # Retrieve products with low stock
@@ -140,7 +140,7 @@ class InventoryWindow(QMainWindow):
     def add_product(self, name, quantity, price):
         try:
             # Connect to the database
-            connection = sqlite3.connect('/Users/ammar/POS Project/POSPY/appData/your_database.db')
+            connection = sqlite3.connect(r'C:\Users\ammar\PythonProjects\PointOfSale\appData\your_database.db')
             cursor = connection.cursor()
 
             # Check if the product already exists in the database
@@ -182,7 +182,7 @@ class InventoryWindow(QMainWindow):
         new_value = item.text()
 
         # Update the database
-        connection = sqlite3.connect('/Users/ammar/POS Project/POSPY/appData/your_database.db')
+        connection = sqlite3.connect(r'C:\Users\ammar\PythonProjects\PointOfSale\appData\your_database.db')
         cursor = connection.cursor()
         query = f"UPDATE products SET {db_column}=? WHERE id=?"
         cursor.execute(query, (new_value, product_id))
