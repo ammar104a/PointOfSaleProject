@@ -141,7 +141,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon6 = QIcon()
-        icon6.addFile(r"PointOfSale/Images/Logos/NEGASOL-logo.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon6.addFile(r"C:\Users\ammar\PythonProjects\PointOfSale\Images\Logos\NEGASOL-logo.png", QSize(), QIcon.Normal, QIcon.Off)
         self.Negasol.setIcon(icon6)
         self.Negasol.setIconSize(QSize(100, 100))
         MainWindow.setCentralWidget(self.centralwidget)
