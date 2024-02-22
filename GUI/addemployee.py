@@ -2,7 +2,7 @@ import sqlite3
 from getpass import getpass
 #Hello
 # Set your database path
-database_path = '/Users/ammar/POS Project/POSPY/appData/employees.db'
+database_path = '/Users/ammar/Projects/Python/PointOfSaleProject/appData/employees.db'
 
 # Connect to the SQLite database
 connection = sqlite3.connect(database_path)

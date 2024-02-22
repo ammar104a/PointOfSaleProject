@@ -20,7 +20,7 @@ class InvoiceWindow(QMainWindow):
         self.resize(1177, 778)
         self.initUI()
     def initialize_customer_db():
-        connection = sqlite3.connect(r'C:\Users\ammar\PythonProjects\PointOfSale\appData\customers.db')
+        connection = sqlite3.connect(r'/Users/ammar/Projects/Python/PointOfSaleProject/appData/customers.db')
         cursor = connection.cursor()
         cursor.execute('''
             CREATE TABLE IF NOT EXISTS customers (
@@ -80,7 +80,7 @@ class InvoiceWindow(QMainWindow):
 
 
     def checkAndUpdateInventory(self, productId, quantity):
-        connection = sqlite3.connect(r'C:\Users\ammar\PythonProjects\PointOfSale\appData\your_database.db')
+        connection = sqlite3.connect(r'/Users/ammar/Projects/Python/PointOfSaleProject/appData/your_database.db')
         cursor = connection.cursor()
         try:
             # Fetch the current inventory for the product
@@ -109,7 +109,7 @@ class InvoiceWindow(QMainWindow):
     def fetchInventory(self):
         try:
             # Correct the path if the database file is in 'appData' folder
-            connection = sqlite3.connect(r'C:\Users\ammar\PythonProjects\PointOfSale\appData\your_database.db')
+            connection = sqlite3.connect(r'/Users/ammar/Projects/Python/PointOfSaleProject/appData/your_database.db')
             cursor = connection.cursor()
             cursor.execute("SELECT id, name, price FROM products")  # Ensure these are the correct column names
             rows = cursor.fetchall()
@@ -121,7 +121,7 @@ class InvoiceWindow(QMainWindow):
         return []
     def populateInventoryTable(self):
         try:
-            connection = sqlite3.connect(r'C:\Users\ammar\PythonProjects\PointOfSale\appData\your_database.db')
+            connection = sqlite3.connect(r'/Users/ammar/Projects/Python/PointOfSaleProject/appData/your_database.db')
             cursor = connection.cursor()
             cursor.execute("SELECT * FROM products")
             records = cursor.fetchall()
@@ -159,7 +159,7 @@ class InvoiceWindow(QMainWindow):
             return  # Exit if the user cancels the input dialog
 
         # Save customer details to the database
-        connection = sqlite3.connect(r'C:\Users\ammar\PythonProjects\PointOfSale\appData\customers.db')
+        connection = sqlite3.connect(r'/Users/ammar/Projects/Python/PointOfSaleProject/appData/customers.db')
         cursor = connection.cursor()
         cursor.execute('INSERT INTO customers (name, phone) VALUES (?, ?)', (name, phone))
         connection.commit()
@@ -185,7 +185,7 @@ class InvoiceWindow(QMainWindow):
         # Create story elements for the PDF
         story = []
         # Define the image path
-        image_path = r'C:\Users\ammar\PythonProjects\PointOfSale\Images\Logos\SPORTO-logo.jpg'
+        image_path = r'/Users/ammar/Projects/Python/PointOfSaleProject/Images/Logos/SPORTO-logo.jpg'
 
 
         # Calculate the position to place the image at the bottom-left corner
@@ -276,7 +276,7 @@ class InvoiceWindow(QMainWindow):
         quantity = int(quantity)
 
         # Fetch product data from the database
-        connection = sqlite3.connect(r'C:\Users\ammar\PythonProjects\PointOfSale\appData\your_database.db')
+        connection = sqlite3.connect(r'/Users/ammar/Projects/Python/PointOfSaleProject/appData/your_database.db')
         cursor = connection.cursor()
 
         try:

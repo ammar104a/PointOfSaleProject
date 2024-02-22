@@ -30,7 +30,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName(u"All In One Point of Sale System")
         MainWindow.resize(1177, 778)
         MainWindow.setStyleSheet("QMainWindow {"
-                         "    background-image: url('C:/Users/ammar/PythonProjects/PointOfSale/Images/Backgrounds/SportoBgFHD.jpg');\n"
+                         "    background-image: url('/Users/ammar/Projects/Python/PointOfSaleProject/Images/Backgrounds/SportoBgFHD.jpg');\n"
                          "    background-repeat: no-repeat;"
                          "    background-position: center center;"
                          "}")
@@ -46,7 +46,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon = QIcon()
-        icon.addFile(r"C:\Users\ammar\PythonProjects\PointOfSale\Images\Icons\Viewnventory1.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(r"/Users/ammar/Projects/Python/PointOfSaleProject/Images/Icons/Viewnventory1.png", QSize(), QIcon.Normal, QIcon.Off)
         self.ViewInventory.setIcon(icon)
         self.ViewInventory.setIconSize(QSize(150, 150))
         self.ViewInventory.clicked.connect(self.openInventoryWindow)
@@ -59,7 +59,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon1 = QIcon()
-        icon1.addFile(r"C:\Users\ammar\PythonProjects\PointOfSale\Images\Icons\Accounts1.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(r"/Users/ammar/Projects/Python/PointOfSaleProject/Images/Icons/Accounts1.png", QSize(), QIcon.Normal, QIcon.Off)
         self.accounts.setIcon(icon1)
         self.accounts.setIconSize(QSize(150, 150))
         self.checkout = QPushButton(self.centralwidget)
@@ -71,7 +71,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon2 = QIcon()
-        icon2.addFile(r"C:\Users\ammar\PythonProjects\PointOfSale\Images\Icons\Checkout1.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon2.addFile(r"/Users/ammar/Projects/Python/PointOfSaleProject/Images/Icons/Checkout1.png", QSize(), QIcon.Normal, QIcon.Off)
         self.checkout.setIcon(icon2)
         self.checkout.setIconSize(QSize(150, 150))
         self.checkout.clicked.connect(self.openInvoiceVerification) # Button connected to function that opens new window
@@ -84,7 +84,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon3 = QIcon()
-        icon3.addFile(r"C:\Users\ammar\PythonProjects\PointOfSale\Images\Icons\ManageCustomers1.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon3.addFile(r"/Users/ammar/Projects/Python/PointOfSaleProject/Images/Icons/ManageCustomers1.png", QSize(), QIcon.Normal, QIcon.Off)
         self.Customers.setIcon(icon3)
         self.Customers.setIconSize(QSize(800, 800))
         self.Customers.clicked.connect(self.openCustomerManagement)
@@ -97,7 +97,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon4 = QIcon()
-        icon4.addFile(r"C:\Users\ammar\PythonProjects\PointOfSale\Images\Icons\Analytics1.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(r"/Users/ammar/Projects/Python/PointOfSaleProject/Images/Icons/Analytics1.png", QSize(), QIcon.Normal, QIcon.Off)
         self.analytics.setIcon(icon4)
         self.analytics.setIconSize(QSize(150, 150))
         self.employees = QPushButton(self.centralwidget)
@@ -109,7 +109,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon5 = QIcon()
-        icon5.addFile(r"C:\Users\ammar\PythonProjects\PointOfSale\Images\Icons\ManageEmployees1.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon5.addFile(r"/Users/ammar/Projects/Python/PointOfSaleProject/Images/Icons/ManageEmployees1.png", QSize(), QIcon.Normal, QIcon.Off)
         self.employees.setIcon(icon5)
         self.employees.setIconSize(QSize(150, 150))
         self.employees.clicked.connect(self.openManageEmployees) # Button connected to function that opens new window
@@ -141,7 +141,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         icon6 = QIcon()
-        icon6.addFile(r"C:\Users\ammar\PythonProjects\PointOfSale\Images\Logos\NEGASOL-logo.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon6.addFile(r"/Users/ammar/Projects/Python/PointOfSaleProject/Images/Logos/NEGASOL-logo.png", QSize(), QIcon.Normal, QIcon.Off)
         self.Negasol.setIcon(icon6)
         self.Negasol.setIconSize(QSize(100, 100))
         MainWindow.setCentralWidget(self.centralwidget)

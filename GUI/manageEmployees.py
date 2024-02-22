@@ -54,7 +54,7 @@ class ManageEmployees(QMainWindow):
 
     def load_employees(self):
         # Connect to your SQLite database and retrieve employee data
-        conn = sqlite3.connect(r'C:\Users\ammar\PythonProjects\PointOfSale\appData\employees.db')
+        conn = sqlite3.connect(r'/Users/ammar/Projects/Python/PointOfSaleProject/appData/employees.db')
         cursor = conn.cursor()
         cursor.execute("SELECT name, key, shift FROM employees")
         employees = cursor.fetchall()
@@ -85,7 +85,7 @@ class ManageEmployees(QMainWindow):
             return
 
         # Add the employee to the database
-        connection = sqlite3.connect(r'C:\Users\ammar\PythonProjects\PointOfSale\appData\employees.db')
+        connection = sqlite3.connect(r'/Users/ammar/Projects/Python/PointOfSaleProject/appData/employees.db')
         cursor = connection.cursor()
 
         # Check if the key already exists in the database
@@ -116,7 +116,7 @@ class ManageEmployees(QMainWindow):
         # Check if the input is valid and the user clicked OK
         if ok and len(key) == 8 and key.isdigit():
             # Search for the employee with the given key in the database
-            connection = sqlite3.connect(r'C:\Users\ammar\PythonProjects\PointOfSale\appData\employees.db')
+            connection = sqlite3.connect(r'/Users/ammar/Projects/Python/PointOfSaleProject/appData/employees.db')
             cursor = connection.cursor()
         
             # Check if the employee exists
@@ -167,7 +167,7 @@ class ManageEmployees(QMainWindow):
         emp_key, ok = QInputDialog.getText(self, 'Enter Employee Key', 'Enter the employee key:')
 
         if ok and emp_key:
-            connection = sqlite3.connect(r'C:\Users\ammar\PythonProjects\PointOfSale\appData\employees.db')
+            connection = sqlite3.connect(r'/Users/ammar/Projects/Python/PointOfSaleProject/appData/employees.db')
             cursor = connection.cursor()
 
             # Check if the employee exists
@@ -200,7 +200,7 @@ class ManageEmployees(QMainWindow):
 
     def populate_employee_table(self):
         # Fetch data from the database and populate the employee table
-        connection = sqlite3.connect(r'C:\Users\ammar\PythonProjects\PointOfSale\appData\employees.db')
+        connection = sqlite3.connect(r'/Users/ammar/Projects/Python/PointOfSaleProject/appData/employees.db')
         cursor = connection.cursor()
 
         # Fetch all employees from the database

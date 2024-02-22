@@ -12,7 +12,7 @@ class InvoiceVerification(QMainWindow):
         super().__init__(None)
         self.setWindowTitle("Employee Verification")
         self.resize(250, 100)
-        self.database_path = r'C:\Users\ammar\PythonProjects\PointOfSale\appData\employees.db'
+        self.database_path = r'/Users/ammar/Projects/Python/PointOfSaleProject/appData/employees.db'
         self.master_key = "582002"
         self.initUI()
 

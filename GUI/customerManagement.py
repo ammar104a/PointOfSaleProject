@@ -60,7 +60,7 @@ class CustomerManagement(QMainWindow):
         self.tableView.setModel(self.model)
         self.tableView.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
-        connection = sqlite3.connect("C:\\Users\\ammar\\PythonProjects\\PointOfSale\\appData\\customers.db")
+        connection = sqlite3.connect("/Users/ammar/Projects/Python/PointOfSaleProject/appData/customers.db")
         cursor = connection.cursor()
         cursor.execute("SELECT * FROM customers")
         rows = cursor.fetchall()
@@ -81,7 +81,7 @@ class CustomerManagement(QMainWindow):
                                         QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
 
             if reply == QMessageBox.Yes:
-                connection = sqlite3.connect("C:\\Users\\ammar\\PythonProjects\\PointOfSale\\appData\\customers.db")
+                connection = sqlite3.connect("/Users/ammar/Projects/Python/PointOfSaleProject/appData/customers.db")
                 cursor = connection.cursor()
 
                 try:
@@ -112,7 +112,7 @@ class CustomerManagement(QMainWindow):
                     return
 
                 try:
-                    connection = sqlite3.connect("C:\\Users\\ammar\\PythonProjects\\PointOfSale\\appData\\customers.db")
+                    connection = sqlite3.connect("/Users/ammar/Projects/Python/PointOfSaleProject/appData/customers.db")
                     cursor = connection.cursor()
                     cursor.execute("UPDATE customers SET phone = ? WHERE name = ?", (new_phone, name))
                     connection.commit()
@@ -129,7 +129,7 @@ class CustomerManagement(QMainWindow):
 
 
     def merge_customers(self):
-        connection = sqlite3.connect("C:\\Users\\ammar\\PythonProjects\\PointOfSale\\appData\\customers.db")
+        connection = sqlite3.connect("/Users/ammar/Projects/Python/PointOfSaleProject/appData/customers.db")
         cursor = connection.cursor()
 
         cursor.execute("""
@@ -146,7 +146,7 @@ class CustomerManagement(QMainWindow):
 
 
     def export_to_excel(self):
-        connection = sqlite3.connect("C:\\Users\\ammar\\PythonProjects\\PointOfSale\\appData\\customers.db")
+        connection = sqlite3.connect("/Users/ammar/Projects/Python/PointOfSaleProject/appData/customers.db")
         df = pd.read_sql_query("SELECT * FROM customers", connection)
         file_path, _ = QFileDialog.getSaveFileName(self, 'Save File', '', 'Excel Files (*.xlsx)')
         if file_path:
@@ -168,7 +168,7 @@ class CustomerManagement(QMainWindow):
         def on_add_clicked():
             name = name_edit.text()
             phone = phone_edit.text()
-            connection = sqlite3.connect("C:\\Users\\ammar\\PythonProjects\\PointOfSale\\appData\\customers.db")
+            connection = sqlite3.connect("/Users/ammar/Projects/Python/PointOfSaleProject/appData/customers.db")
             cursor = connection.cursor()
             cursor.execute("INSERT INTO customers (name, phone) VALUES (?, ?)", (name, phone))
             connection.commit()
